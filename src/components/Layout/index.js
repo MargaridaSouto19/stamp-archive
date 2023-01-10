@@ -1,18 +1,12 @@
 import React from 'react'
 import PropTypes from 'prop-types';
 import styles from './layout.module.scss'
+import NavBar from '../NavBar';
 
-const Layout = ({ pageTitle, children }) => {
+const Layout = ({ children }) => {
   return (
     <div className={styles.layout}>
-      {/* Aqui importar um componente chamado Navbar */}
-      <nav>
-        <ul>
-          <li><a href='/'>Home</a></li>
-          <li><a href='/about'>About</a></li>
-        </ul>
-      </nav>
-      <h1>{pageTitle}</h1>
+      <NavBar />
       <main>
         {children}
       </main>
@@ -22,7 +16,6 @@ const Layout = ({ pageTitle, children }) => {
 }
 
 Layout.propTypes = {
-  pageTitle: PropTypes.string,
   children: PropTypes.element,
 }
 

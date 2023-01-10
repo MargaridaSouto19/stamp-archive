@@ -1,10 +1,12 @@
 import React from 'react'
+import FiltersList from '../../components/FiltersList'
 import Layout from '../../components/Layout'
+import NavBar from '../../components/NavBar'
 
 const Home = () => {
   return (
-    <Layout pageTitle="Home">
-      <h3>This is the home page</h3>
+    <Layout>
+      <FiltersList />
     </Layout>
   )
 }

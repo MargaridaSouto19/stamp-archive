@@ -1,0 +1,18 @@
+@import '../../styles/variables.scss';
+
+.filtersContainer {
+  width: fit-content;
+  border: 1px solid $black;
+  border-top: none;
+  height: 100%;
+
+  .mainOptions {
+    list-style: none;
+
+    >li {
+      border-bottom: 1px solid $black;
+      text-align: center;
+      transition: 0.2s;
+    }
+  }
+}

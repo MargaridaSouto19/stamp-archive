@@ -1,1 +1,11 @@
-$primaryColor: salmon;
+// --------- Typography --------- //
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;500;600;700&display=swap');
+
+$typography: 'Roboto Mono', sans-serif;
+
+// ----------- Colors ----------- //
+$primaryColor: #1450EB;
+$primaryColorDisabled: rgba(20, 80, 235, 0.4);
+$secondaryColor: #FF5A5A;
+$black: #222222;
+$white: #FFFFFF;
