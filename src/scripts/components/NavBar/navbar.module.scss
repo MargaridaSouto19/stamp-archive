@@ -1,0 +1,23 @@
+@import '../../../styles/variables.scss';
+
+.container {
+  border: 1px solid $black;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100vw;
+  padding: 1.5rem 4rem;
+  height: 100px;
+  align-items: center;
+}
+
+.container img {
+  height: 3rem;
+}
+
+.links ul {
+  align-items: center;
+  display: flex;
+  gap: 4rem;
+  list-style: none;
+}

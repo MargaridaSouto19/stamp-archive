@@ -1,0 +1,51 @@
+@import '../../../styles/variables.scss';
+@import '../../../styles/responsiveness.scss';
+
+.container {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  position: relative;
+}
+
+.left {
+  border: 1px solid $black;
+  border-top: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100%;
+  width: 60%;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
+
+.right {
+  border-right: 1px solid $black;
+  width: 40%;
+
+  ul {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    li {
+      list-style: none;
+      border-bottom: 1px solid $black;
+      padding: 2rem;
+
+      .links {
+        display: flex;
+        flex-direction: column;
+
+      }
+    }
+
+  }
+}
