@@ -1,6 +1,7 @@
 import React from 'react'
 import { logo } from '../../images'
 import styles from './navbar.module.scss'
+import Link from '../shared/Link'
 
 const NavBar = () => {
   return (
@@ -8,8 +9,8 @@ const NavBar = () => {
       <a href='/'><img src={logo} alt="stamp-archive-logo"></img></a>
       <div className={styles.links}>
         <ul>
-          <li className={styles.link}><a href='/about'>about</a></li>
-          <li className={styles.link}><a href='/contactUs'>contact us</a></li>
+          <li ><Link href='/about' text='about' /></li>
+          <li ><Link href='/contactus' text='contact us' /></li>
         </ul>
       </div>
     </div>

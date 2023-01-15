@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import Filter from '../shared/Filter';
 import filterList from './filtersList.json';
 import styles from './filters-list.module.scss';
+import Button from '../shared/Button';
 
 const FiltersList = () => {
   const [activeFilter, setActiveFilter] = useState('');
@@ -27,6 +28,7 @@ const FiltersList = () => {
   }, [selectedFilter]);
 
   console.log(choosedFilters);
+
   return (
     <div className={styles.filtersContainer}>
       <Filter
@@ -35,6 +37,7 @@ const FiltersList = () => {
         setCurrentActive={setActiveFilter}
         setSelectedFilter={setSelectedFilter}
       />
+      <Button text="clear filters" isFullWidth />
     </div>
   );
 };

@@ -1,4 +1,5 @@
 @import '../../styles/variables.scss';
+@import '../../styles/responsiveness.scss';
 
 .container {
   height: 100%;
@@ -17,8 +18,9 @@
   width: 60%;
 
   img {
-    padding-top: 10%;
-    width: 50%;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
   }
 }
 
@@ -28,17 +30,21 @@
 
   ul {
     height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 
     li {
       list-style: none;
       border-bottom: 1px solid $black;
       padding: 2rem;
-      margin-top: 0;
-      height: fit-content;
 
-      &:last-child {
-        height: 100%;
+      .links {
+        display: flex;
+        flex-direction: column;
+
       }
     }
+
   }
 }
