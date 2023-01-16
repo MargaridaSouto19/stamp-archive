@@ -7,6 +7,10 @@
   display: flex;
   flex-direction: row;
   position: relative;
+
+  @include tabletBreakpoint() {
+    flex-direction: column;
+  }
 }
 
 .left {
@@ -17,6 +21,10 @@
   align-items: center;
   height: 100%;
   width: 60%;
+
+  @include tabletBreakpoint() {
+    display: none;
+  }
 
   img {
     width: 100%;
@@ -29,16 +37,20 @@
   border-right: 1px solid $black;
   width: 40%;
 
+  @include tabletBreakpoint() {
+    width: 100%;
+  }
+
   ul {
     height: 100%;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
 
     li {
       list-style: none;
       border-bottom: 1px solid $black;
       padding: 2rem;
+      height: 100%;
 
       .links {
         display: flex;

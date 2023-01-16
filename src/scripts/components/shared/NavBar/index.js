@@ -1,7 +1,7 @@
 import React from 'react'
-import { logo } from '../../images'
+import { logo } from '../../../images'
 import styles from './navbar.module.scss'
-import Link from '../shared/Link'
+import Link from '../Link'
 
 const NavBar = () => {
   return (

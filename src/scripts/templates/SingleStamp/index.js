@@ -1,5 +1,5 @@
 import React from 'react'
-import Layout from '../../components/Layout'
+import Layout from '../../components/shared/Layout'
 import Link from '../../components/shared/Link'
 import styles from './singlestamp.module.scss'
 import { stamp } from '../../images'

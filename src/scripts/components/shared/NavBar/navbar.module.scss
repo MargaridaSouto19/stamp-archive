@@ -1,4 +1,5 @@
-@import '../../../styles/variables.scss';
+@import '../../../../styles/variables.scss';
+@import '../../../../styles/responsiveness.scss';
 
 .container {
   border: 1px solid $black;
@@ -9,6 +10,10 @@
   padding: 1.5rem 4rem;
   height: 100px;
   align-items: center;
+
+  @include mobileBreakpoint () {
+    display: none;
+  }
 }
 
 .container img {

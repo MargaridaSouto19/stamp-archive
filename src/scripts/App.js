@@ -16,7 +16,8 @@ const App = () => {
         <Route path="/" element={<Home handleStampPage={setSelectedStamp} />} exact />
         <Route path="/about" element={<About />} exact />
         <Route path="/contact-us" element={<ContactUs />} exact />
-        <Route path={`/${selectedStamp?.slug}`} element={<SingleStamp stampItem={selectedStamp} />} exact />
+        <Route path="/single-stamp" element={<SingleStamp />} exact />
+        {/* <Route path={`/${selectedStamp?.slug}`} element={<SingleStamp stampItem={selectedStamp} />} exact /> */}
       </Routes>
     </Router>
   );

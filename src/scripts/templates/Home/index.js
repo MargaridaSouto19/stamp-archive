@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import FiltersList from '../../components/FiltersList';
-import Layout from '../../components/Layout';
+import Layout from '../../components/shared/Layout'
 import StampsGallery from '../../components/StampsGallery';
 
 function Home({ handleStampPage }) {

@@ -2,7 +2,7 @@ import React from 'react'
 import FormField from '../../components/shared/FormField'
 import Link from '../../components/shared/Link'
 import Button from '../../components/shared/Button'
-import Layout from '../../components/Layout'
+import Layout from '../../components/shared/Layout'
 import styles from './contactus.module.scss'
 
 const ContactUs = () => {

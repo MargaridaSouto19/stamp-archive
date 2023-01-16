@@ -1,4 +1,5 @@
 @import '../../../../styles/variables.scss';
+@import '../../../../styles/responsiveness.scss';
 
 .link {
   text-decoration: none;
@@ -33,5 +34,18 @@
     position: absolute;
     left: 4rem;
     top: 2rem;
+
+    @include tabletBreakpoint() {
+      position: unset;
+      padding: 2rem 0 0 2rem;
+
+      &.tertiary {
+        color: $black;
+
+        &:hover {
+          color: $secondaryColor;
+        }
+      }
+    }
   }
 }
