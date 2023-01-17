@@ -1,12 +1,22 @@
 @import '../../../../styles/variables.scss';
+@import '../../../../styles/responsiveness.scss';
+
 
 .filterGroup {
   list-style: none;
 
-  > li {
+  @include mobileBreakpoint() {
+    width: 100%;
+  }
+
+  >li {
     border-bottom: 1px solid $black;
     text-align: center;
     width: 234px;
+
+    @include mobileBreakpoint() {
+      width: 100%;
+    }
 
     .filterBtn {
       background-color: $white;
@@ -22,6 +32,7 @@
         font-weight: 700;
       }
     }
+
     &.activeFilter {
       .filterBtn {
         color: $primaryColor;
@@ -59,6 +70,7 @@
         }
 
         &:hover {
+
           &::before,
           &::after {
             position: absolute;

@@ -2,36 +2,43 @@
   {
     "type": "color",
     "values": [
+      "black",
       "blue",
+      "green",
+      "orange",
+      "purple",
+      "red",
+      "white",
       "yellow"
     ]
   },
   {
     "type": "country",
     "values": [
-      "Portugal",
-      "Spain"
-    ]
-  },
-  {
-    "type": "year",
-    "values": [
-      "option 1",
-      "option 2"
+      "Belgium",
+      "France",
+      "Guinea",
+      "Italy",
+      "Nigeria",
+      "Norway",
+      "Sweden",
+      "Switzerland",
+      "United Kingdom"
     ]
   },
   {
     "type": "size",
     "values": [
-      "option 1",
-      "option 2"
+      "small",
+      "medium",
+      "large"
     ]
   },
   {
     "type": "text",
     "values": [
-      "option 1",
-      "option 2"
+      "with",
+      "without"
     ]
   }
 ]

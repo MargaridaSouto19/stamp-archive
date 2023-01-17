@@ -37,6 +37,7 @@ const SingleStamp = () => {
   const stampCountry = selectedStamp?.acf?.country;
   const stampDescription = selectedStamp?.acf?.description;
   const stampImageId = selectedStamp?.acf?.image;
+  const stampPrice = selectedStamp?.acf?.price;
 
   return (
     <Layout>
@@ -60,7 +61,7 @@ const SingleStamp = () => {
             </li>
             <li>
               <h3>price</h3>
-              <p>{`${0}€`}</p>
+              <p>{`${stampPrice}`}</p>
             </li>
             <li>
               <h3>description</h3>
