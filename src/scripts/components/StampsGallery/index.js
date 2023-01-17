@@ -1,35 +1,49 @@
 import React, { useState, useEffect } from 'react';
-import { useFetch } from '../../hooks/useFetch';
 import styles from './stamps-gallery.module.scss';
 
 import Stamp from '../Stamp';
 
-const StampsGallery = ({ updatedFilters, handleStamp }) => {
+const StampsGallery = ({ updatedFilters }) => {
+  const [availablePosts, setAvailablePosts] = useState([]);
+  const [availableMedia, setAvailableMedia] = useState([]);
   const [availableStamps, setAvailableStamps] = useState([]);
 
-  const { data: posts } = useFetch({
-    method: 'getPosts',
-    query: '?_embed&per_page=100',
-  });
-  const { data: media } = useFetch({
-    method: 'getMedia',
-    query: '?_embed&per_page=100',
-  });
-
+  // Posts and media fetching
   useEffect(() => {
-    if (posts) {
-      setAvailableStamps(posts);
+    async function loadPosts() {
+      const responsePosts = await fetch('/wp-json/wp/v2/posts');
+      const posts = await responsePosts.json();
+      setAvailablePosts(posts);
+    }
+    async function loadMedia() {
+      const responseMedia = await fetch('/wp-json/wp/v2/media');
+      const media = await responseMedia.json();
+      setAvailableMedia(media);
+    }
+    loadPosts();
+    loadMedia();
+  }, []);
+
+  // Attach images to the respective posts
+  useEffect(() => {
+    if (availablePosts) {
+      setAvailableStamps(availablePosts);
     }
     if (availableStamps !== []) {
       setAvailableStamps((prevData) => {
-        const newData = prevData?.map((stamp, index) => {
-          return { ...stamp.acf, image: media[index]?.source_url };
+        const newData = prevData?.map((stamp) => {
+          return {
+            ...stamp.acf,
+            image: availableMedia.find((i) => i.id === stamp.acf.image)
+              ?.source_url,
+          };
         });
         return newData;
       });
     }
-  }, [posts]);
+  }, [availablePosts, availableMedia]);
 
+  // Filtering
   useEffect(() => {
     if (updatedFilters.length === 0) {
       setAvailableStamps([]);
@@ -41,7 +55,7 @@ const StampsGallery = ({ updatedFilters, handleStamp }) => {
             // check if the current filter value exists in the stamp
             return (
               filter.values.length === 0 ||
-              filter.values.includes(stamp[filter.type])
+              filter.values.includes(stamp[filter.type].toLowerCase())
             );
           }
           // if the filter type does not exist in the stamp, we assume it matches the filter
@@ -57,7 +71,7 @@ const StampsGallery = ({ updatedFilters, handleStamp }) => {
     <div className={styles.stampsGrid}>
       {availableStamps !== [] &&
         availableStamps.map((stamp, index) => (
-          <Stamp item={stamp} post={posts[index]} key={index} handleStamp={handleStamp} />
+          <Stamp item={stamp} post={availablePosts[index]} key={index} />
         ))}
     </div>
   );

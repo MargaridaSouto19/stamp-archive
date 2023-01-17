@@ -1,21 +1,25 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import styles from './stamp.module.scss';
 
-const Stamp = ({ item, post, handleStamp }) => {
+const Stamp = ({ item, post }) => {
+  const navigate = useNavigate();
+
   return (
-    // <a className={styles.stampCard} href={post.link} onClick={() => handleStamp(item.id)}>
-    //   <img src={item.image} />
-    // </a>
-    <a className={styles.stampCard} href={post.link} onClick={() => handleStamp(post)}>
-      <img src={item.image} />
-    </a>
+    <button
+      className={styles.stampCard}
+      onClick={() => {
+        navigate(`/${post.slug}`);
+      }}
+    >
+      <img src={item?.image} />
+    </button>
   );
 };
 
 Stamp.propTypes = {
   item: PropTypes.object,
-  handleStamp: PropTypes.func,
 };
 
 export default Stamp;

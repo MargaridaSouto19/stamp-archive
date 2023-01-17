@@ -23,9 +23,7 @@
     width: 100%;
     border: none;
     padding-top: 2rem;
-
   }
-
 }
 
 .right {
@@ -44,7 +42,7 @@
     text-align: center;
   }
 
-  >div:not(.personalInfo) {
+  > div:not(.personalInfo) {
     border: none;
     border-top: 1px solid $black;
     height: 100%;
@@ -58,20 +56,17 @@
       width: 100%;
       flex-direction: column;
 
-      >:nth-child(2) {
+      > :nth-child(2) {
         border-top: 1px solid $black;
       }
-
     }
 
-    >div {
+    > div {
       border: none;
 
       &:first-child {
         border-right: 1px solid $black;
       }
-
     }
   }
-
 }

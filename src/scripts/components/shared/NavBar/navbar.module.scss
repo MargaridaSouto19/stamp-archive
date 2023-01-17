@@ -11,7 +11,7 @@
   height: 100px;
   align-items: center;
 
-  @include mobileBreakpoint () {
+  @include mobileBreakpoint() {
     display: none;
   }
 }

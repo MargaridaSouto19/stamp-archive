@@ -14,8 +14,8 @@ const Filter = ({
   const chooseFilter = (parent, value) => {
     setSelectedFilter &&
       setSelectedFilter({
-        type: parent,
-        filter: value,
+        type: parent.toLowerCase(),
+        filter: value.toLowerCase(),
       });
   };
 

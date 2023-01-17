@@ -1,10 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import Button from '../shared/Button';
 import Filter from '../shared/Filter';
+import { useNavigate } from 'react-router-dom';
 import filterList from './filtersList.json';
 import styles from './filters-list.module.scss';
 
-const FiltersList = ({ updateFilters }) => {
+const FiltersList = ({ updateFilters, clearFilters }) => {
   const [activeFilter, setActiveFilter] = useState('');
   const [selectedFilter, setSelectedFilter] = useState({});
   const [customFilters, setCustomFilters] = useState([
@@ -15,6 +16,8 @@ const FiltersList = ({ updateFilters }) => {
     { type: 'type', values: [] },
     { type: 'text', values: [] },
   ]);
+
+  const navigate = useNavigate();
 
   useEffect(() => {
     const prevFilters = [...customFilters];
@@ -27,7 +30,7 @@ const FiltersList = ({ updateFilters }) => {
       }
     });
     updateFilters(prevFilters);
-  }, [selectedFilter]);
+  }, [selectedFilter, customFilters]);
 
   return (
     <div className={styles.filtersContainer}>
@@ -37,7 +40,13 @@ const FiltersList = ({ updateFilters }) => {
         setCurrentActive={setActiveFilter}
         setSelectedFilter={setSelectedFilter}
       />
-      <Button text="clear filters" isFullWidth />
+      <Button
+        text="clear filters"
+        isFullWidth
+        handler={() => {
+          navigate(0);
+        }}
+      />
     </div>
   );
 };

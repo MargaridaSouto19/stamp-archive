@@ -11,11 +11,16 @@ const Button = ({ text, type, variant, handler, isFullWidth }) => {
       className={`
         ${styles.button}
         ${isFullWidth && styles.fullWidth}
-        ${!variant ? styles.primary : variant === 'secondary' ? styles.secondary : ''}`
-      }
+        ${
+          !variant
+            ? styles.primary
+            : variant === 'secondary'
+            ? styles.secondary
+            : ''
+        }`}
     >
       {text}
-    </button >
+    </button>
   );
 };
 

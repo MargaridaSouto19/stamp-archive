@@ -23,9 +23,51 @@
   flex-direction: row;
   justify-content: space-between;
 
+  filter: invert(1);
+}
+
+.container img {
+  height: 3rem;
+}
+
+.menu {
+  width: 100%;
+
+  ul {
+    padding: 0.5rem 0;
+    justify-content: end;
+    display: flex;
+    flex-direction: row;
+    gap: 4rem;
+    list-style: none;
+  }
+}
+@import '../../../../styles/variables.scss';
+@import '../../../../styles/responsiveness.scss';
+
+.container {
+  border: 1px solid $black;
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 100vw;
+  padding: 1.5rem;
+  height: fit-content;
+  align-items: center;
+  background-color: $black;
+
+  @include mobileBreakpoint() {
+    display: flex;
+  }
+}
+
+.bar {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
 
   filter: invert(1);
-
 }
 
 .container img {
