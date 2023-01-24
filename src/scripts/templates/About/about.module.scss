@@ -1,6 +1,12 @@
 @import '../../../styles/variables.scss';
 @import '../../../styles/responsiveness.scss';
 
+body {
+  @include tabletBreakpoint() {
+    overflow-y: auto;
+  }
+}
+
 .container {
   height: 100%;
   width: 100%;

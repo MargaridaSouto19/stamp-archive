@@ -11,12 +11,12 @@ const StampsGallery = ({ updatedFilters }) => {
   // Posts and media fetching
   useEffect(() => {
     async function loadPosts() {
-      const responsePosts = await fetch('/wp-json/wp/v2/posts');
+      const responsePosts = await fetch('/wp-json/wp/v2/posts?per_page=100');
       const posts = await responsePosts.json();
       setAvailablePosts(posts);
     }
     async function loadMedia() {
-      const responseMedia = await fetch('/wp-json/wp/v2/media');
+      const responseMedia = await fetch('/wp-json/wp/v2/media?per_page=100');
       const media = await responseMedia.json();
       setAvailableMedia(media);
     }

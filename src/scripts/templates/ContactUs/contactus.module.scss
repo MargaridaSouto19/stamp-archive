@@ -1,6 +1,12 @@
 @import '../../../styles/variables.scss';
 @import '../../../styles/responsiveness.scss';
 
+body {
+  @include tabletBreakpoint() {
+    overflow-y: auto;
+  }
+}
+
 .container {
   width: 100%;
   border: 1px solid $black;
@@ -42,7 +48,7 @@
     text-align: center;
   }
 
-  > div:not(.personalInfo) {
+  >div:not(.personalInfo) {
     border: none;
     border-top: 1px solid $black;
     height: 100%;
@@ -61,7 +67,7 @@
       }
     }
 
-    > div {
+    >div {
       border: none;
 
       &:first-child {

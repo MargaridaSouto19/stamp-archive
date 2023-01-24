@@ -37,6 +37,7 @@
     @include tabletBreakpoint() {
       height: 100%;
       width: auto;
+      object-fit: contain;
       padding-bottom: 10%;
     }
   }

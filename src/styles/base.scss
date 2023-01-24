@@ -10,10 +10,6 @@
 
 body {
   overflow: hidden;
-
-  @include tabletBreakpoint() {
-    overflow-y: auto;
-  }
 }
 
 h1 {
